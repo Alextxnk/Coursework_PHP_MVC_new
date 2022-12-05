@@ -1,0 +1,22 @@
+{
+    "name": "oop-mvc-pdo-cms/oop-mvc-pdo-cms",
+    "type": "project",
+    "description": "OOP, PDO & MVC patterns bassed CMS.",
+    "keywords": ["OOP", "MVC", "PDO", "CMS", "application"],
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "app/helpers.php"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\": "database/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ferdaus Alom",
+            "email": "faferdaus@gmail.com"
+        }
+    ]
+}

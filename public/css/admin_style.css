@@ -1,0 +1,13 @@
+.left-menu li a.active {
+    background-color: #CA8A04;
+}
+
+.left-menu li a {
+    border-radius: 5px;
+    padding: 6px 3px;
+    color: #ffffff;
+}
+
+.white {
+    color: #ffffff;
+}

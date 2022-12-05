@@ -1,0 +1,294 @@
+/* применяем ко всем элементам */
+* {
+    box-sizing: border-box;
+    /* чтоб margin и padding уже входили в размер блока */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    font-family: Nunito, BlinkMacSystemFont, Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: rgba(133, 135, 150, 0.1);
+    text-align: left;
+}
+
+a {
+    color: #858796;
+    text-decoration: none;
+}
+
+.view-btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .35rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #4e73df;
+    border-color: #4e73df;
+}
+
+.view-btn:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #4e73df;
+}
+
+/* main  */
+main {
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* section-about */
+.section-about {
+    height: 100vh;
+    width: 15%;
+    background-color: #4e73df;
+}
+
+.about-ul {
+    list-style-type: none;
+    padding: 0px;
+    text-align: left;
+}
+
+.about-li {
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+.about-li a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.logo-li {
+    padding: 0.5rem;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(58, 59, 69, 0.2);
+    height: 3.5rem;
+}
+
+.logo {
+    width: 70%;
+}
+
+.sidebar-link:hover {
+    color: #ffffff;
+}
+
+.sidebar-divider {
+    border: none;
+    /* Убираем границу для браузера Firefox */
+    height: 0.5px;
+    /* Толщина линии */
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 0 1rem 1rem;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+/* section-main */
+.section-main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 85%;
+    color: #858796;
+}
+
+nav {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(58, 59, 69, 0.2);
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-ul {
+    list-style-type: none;
+    text-align: left;
+    /* чтоб было по центру */
+    height: 56px;
+    padding: 0.5rem 1rem;
+    margin: 0 40px 0 60px;
+}
+
+.nav-li {
+    display: inline;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.15rem;
+    color: rgba(0, 0, 0, 0.9);
+    line-height: inherit;
+}
+
+.authorize-link {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.15rem;
+    line-height: inherit;
+}
+
+.authorize-link:hover {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+/* table */
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+}
+
+.card-item {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+    max-width: 30%;
+}
+
+.firm-ul {
+    list-style-type: none;
+    padding-bottom: 1rem;
+}
+
+.map {
+    width: 95%;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+.h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0;
+    color: #5a5c69;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.photo_equipment{
+    width: 90%;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #858796;
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e3e6f0;
+}
+
+.table th {
+    padding: 0.75rem;
+    border-top: 1px solid #e3e6f0;
+}
+
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #e3e6f0;
+}
+
+/* footer */
+footer {
+    flex: 0 0 auto;
+    height: 76px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 2rem 0;
+    line-height: 1;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.email {
+    line-height: 1;
+    font-size: 0.9rem;
+}
+
+.email:hover {
+    color: black;
+}
