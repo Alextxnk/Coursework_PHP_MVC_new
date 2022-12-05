@@ -52,3 +52,11 @@ $router->get('lens', 'LensController@index');
 
 // flash
 $router->get('flash', 'FlashController@index');
+
+// admin/author
+$router->get('admin/author', 'AdminAuthorController@index');
+$router->get('admin/author/create', 'AdminAuthorController@create');
+$router->post('admin/author/store', 'AdminAuthorController@store');
+$router->get('admin/author/edit', 'AdminAuthorController@edit');
+$router->post('admin/author/update', 'AdminAuthorController@update');
+$router->post('admin/author/delete', 'AdminAuthorController@destroy');

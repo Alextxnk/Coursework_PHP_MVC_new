@@ -6,7 +6,8 @@ use Database\Migrations\{
     CreateCategoriesTable,
     CreateCategoryPostTable,
     CreateUsersTable,
-    CreatePostsTable
+    CreatePostsTable,
+    CreateAuthorTable
 };
 
 App::bind('config', require 'config.php');
@@ -18,4 +19,5 @@ Router::load('routes.php')
 CreateUsersTable::userTable('users');
 CreatePostsTable::postTable('posts');
 CreateCategoriesTable::categoriesTable('categories');
+CreateAuthorTable::authorTable('author');
 CreateCategoryPostTable::categoryPostTable('category_post');
