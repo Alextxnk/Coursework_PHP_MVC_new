@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Core\Request;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Author;
 use App\Validations\ImageValidation;
 use App\Validations\UserValidation;
 
@@ -16,7 +17,8 @@ class AdminController
             'admin/index',
             [
                 'users' => ((new User)->users()),
-                'posts' => ((new Post)->posts())
+                'posts' => ((new Post)->posts()),
+                'authors' => ((new Author)->authors())
             ]
         );
     }

@@ -38,7 +38,7 @@ exit();
                                     <div class="font-bold text-xl mb-2">
                                         <p class="pb-4">Количество пользователей: <?= $users; ?></p>
                                         <hr>
-                                        <p class="pt-4">Количество постов: <?= $posts; ?></p>
+                                        <p class="pt-4">Количество записей в таблице Автор: <?= $authors; ?></p>
                                     </div>
                                 </div>
                             </div>

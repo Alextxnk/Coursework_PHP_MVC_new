@@ -56,6 +56,7 @@ $router->get('flash', 'FlashController@index');
 // admin/author
 $router->get('admin/author', 'AdminAuthorController@index');
 $router->get('admin/author/create', 'AdminAuthorController@create');
+$router->get('admin/author/view', 'AdminAuthorController@show');
 $router->post('admin/author/store', 'AdminAuthorController@store');
 $router->get('admin/author/edit', 'AdminAuthorController@edit');
 $router->post('admin/author/update', 'AdminAuthorController@update');

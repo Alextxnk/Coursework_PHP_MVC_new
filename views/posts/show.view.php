@@ -13,7 +13,7 @@ require '_header.php';
                     ?>
                     <div class="col-span-4">
                         <div class="flex justify-between mb-4">
-                            <h3 class="mb-4 text-xl font-bold">View Post</h3>
+                            <h3 class="mb-4 text-xl font-bold">View Post <?= $post->id; ?>  </h3>
                         </div>
                         <div class="lg:flex items-center border-b pb-2">
                             <div class="min-w-max">

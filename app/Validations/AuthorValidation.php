@@ -9,7 +9,7 @@ class AuthorValidation
         $title = '';
 
         $title = $this->validateInput($values['title']);
-        $title = strtolower($title);
+        //$title = strtolower($title);
 
         if (empty($title)) {
             $this->jsonEncod(false, 'Title length is too short.');

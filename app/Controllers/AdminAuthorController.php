@@ -23,6 +23,14 @@ class AdminAuthorController
         return view('admin/author/create');
     }
 
+    // Show single admin/author
+    public function show()
+    {
+        $author = ((new Author)->showAuthor(Request::values()['id']));
+
+        return view('admin/author/show', ['author' => $author]);
+    }
+
     // Store admin/author
     public function store()
     {
@@ -36,8 +44,10 @@ class AdminAuthorController
         // Success message
         echo json_encode([
             'success'   => true,
-            'message'   => 'Author added successfully.'
+            'message'   => 'Автор добавлен успешно!'
         ]);
+
+        //redirect('admin/author');
     }
 
     // Edit admin/author
@@ -46,7 +56,7 @@ class AdminAuthorController
         $author = (new Author)->getAuthor(
             Request::values()['id']
         );
-
+        //dd($author);
         return view('admin/author/edit', ['author' => $author]);
     }
 
@@ -64,8 +74,10 @@ class AdminAuthorController
         // Success message
         echo json_encode([
             'success' => true,
-            'message' => 'Author updated successfully!'
+            'message' => 'Автор обновлен успешно!'
         ]);
+
+        //redirect('admin/author');
     }
 
     // Delete admin/author

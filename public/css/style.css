@@ -46,7 +46,7 @@ a {
 
 /* main  */
 main {
-    user-select: none;
+    /*user-select: none;*/
     display: flex;
     justify-content: space-between;
 }

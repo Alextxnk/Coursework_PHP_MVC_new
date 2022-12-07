@@ -66,6 +66,17 @@ class Author
         $stm->execute([$id]);
     }
 
+    // Show author by id
+    public function showAuthor($id)
+    {
+        // Single author query
+        $select = "SELECT * FROM author WHERE id=?";
+
+        $stm = pdo()->prepare($select);
+        $stm->execute([$id]);
+        return $stm->fetch(PDO::FETCH_OBJ);
+    }
+
     // Check if author already exists or not
     protected function uniqueCheck($table, $data)
     {
@@ -76,9 +87,20 @@ class Author
 
         foreach ($asRows as $rows) {
             if ($rows['title'] == $data['title']) {
-                $this->jsonEncod(false, 'Author already exists!');
+                $this->jsonEncod(false, 'Такая запись автора уже существует!');
             }
         }
+    }
+
+    // Count posts
+    public function authors()
+    {
+        // Get all posts id query
+        $query = "SELECT count(*) FROM author";
+
+        $stm = pdo()->prepare($query);
+        $stm->execute();
+        return $stm->fetch(PDO::FETCH_COLUMN);
     }
 
     protected function jsonEncod($success, $message)

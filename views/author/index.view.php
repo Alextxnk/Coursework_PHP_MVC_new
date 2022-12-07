@@ -25,7 +25,13 @@ require "_header.php";
                 </div>
 
                 <div class="card-body">
-                    <span>Работу выполнил студент группы ВПР41 Соловьев Алексей</span>
+                    <?php /*dd($author); */?>
+                    <?php foreach ($author as $author) : ?>
+                        <div>
+                            <?= $author->title; ?>
+                            <!--<span><?/*= $author->title; */?></span>-->
+                        </div>
+                    <?php endforeach; ?>
                 </div>
                 <!-- /.card-body -->
             </div>

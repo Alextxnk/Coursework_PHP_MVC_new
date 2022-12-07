@@ -25,8 +25,8 @@ require '_header.php';
                                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
                                                     Заголовок
                                                 </label>
-                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" name="name" type="text" value="<?= $category->name; ?>">
-                                                <p id="name_err" class="text-red-500 text-sm italic error mt-2"></p>
+                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" name="title" type="text" value="<?= $author->title; ?>">
+                                                <p id="title_err" class="text-red-500 text-sm italic error mt-2"></p>
                                             </div>
 
                                             <input type="hidden" name="id" value="<?= $author->id; ?>">
