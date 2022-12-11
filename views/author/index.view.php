@@ -2,7 +2,7 @@
 require "_header.php";
 ?>
 
-<section class="section-main">
+<!--<section class="section-main">
     <nav>
         <ul class="nav-ul">
             <li class="nav-li"><a class="navbar-brand" href="/author">Об авторе</a></li>
@@ -25,22 +25,16 @@ require "_header.php";
                 </div>
 
                 <div class="card-body">
-                    <?php /*dd($author); */?>
-                    <?php foreach ($author as $author) : ?>
+                    <?php /*foreach ($author as $author) : */?>
                         <div>
-                            <?= $author->title; ?>
-                            <!--<span><?/*= $author->title; */?></span>-->
+                            <?/*= $author->title; */?>
                         </div>
-                    <?php endforeach; ?>
+                    <?php /*endforeach; */?>
                 </div>
-                <!-- /.card-body -->
             </div>
-            <!-- /.card -->
 
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.content -->
     <footer>
         <div class="footer-container">
             <div>
@@ -50,9 +44,12 @@ require "_header.php";
                 <a class="email" href="mailto:mail@example.com">email</a>
             </div>
         </div>
-        <!-- /.footer-container -->
     </footer>
-</section>
+</section> -->
+<?php foreach ($author as $author) : ?>
+    <?= $author->body; ?>
+<?php endforeach; ?>
+
 
 <?php
 require "_footer.php";

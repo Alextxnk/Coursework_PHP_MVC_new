@@ -6,16 +6,19 @@ class AuthorValidation
 {
     public function validateAuthor($values)
     {
-        $title = '';
+        $title = $body = "";
 
         $title = $this->validateInput($values['title']);
-        //$title = strtolower($title);
+        $body = $this->validateInput($values['body']);
 
         if (empty($title)) {
-            $this->jsonEncod(false, 'Title length is too short.');
+            $this->jsonEncod(false, 'Длина заголовка слишком маленькая.');
+        } elseif (empty($body)) {
+            $this->jsonEncod(false, 'Длина секции слишком маленькая.');
         } else {
             return [
-                'title' => $title
+                'title' => $title,
+                'body' => $body,
             ];
         }
     }

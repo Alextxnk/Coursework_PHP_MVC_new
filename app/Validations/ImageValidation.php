@@ -33,9 +33,9 @@ class ImageValidation
         if (!in_array($filetype, array_keys($allowedTypes))) {
 
             $this->jsonEncod(false, 'File not allowed.');
-        } elseif ($fileSize > 512000) { // 500 KB MAX, 3 MB (1 byte * 1024 * 1024 * 3 (for 3 MB))
+        } elseif ($fileSize > 5242880) { // 5 MB MAX, 5 MB (1 byte * 1024 * 1024 * 5 (for 5 MB))
 
-            $this->jsonEncod(false, 'Max file size 500 KB.');
+            $this->jsonEncod(false, 'Максимальный размер файла 5МБ');
         } else {
 
             $subDirectory = $this->makeDir();

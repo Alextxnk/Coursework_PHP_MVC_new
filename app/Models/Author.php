@@ -18,7 +18,7 @@ class Author
     // Store author
     public function storeAuthor($table, $data)
     {
-        $this->uniqueCheck($table, $data);
+        /*$this->uniqueCheck($table, $data);
 
         try {
             $query = sprintf(
@@ -31,13 +31,34 @@ class Author
             $stm->execute($data);
         } catch (\Throwable $th) {
             $this->jsonEncod(false, $th->getMessage());
+        }*/
+
+        // Check post unique value
+        $this->uniqueCheck($table, $data);
+
+        // Insert post query
+        $query = sprintf(
+            "INSERT INTO %s (%s) VALUES(%s)",
+            $table,
+            implode(', ', array_keys($data)),
+            ":" . implode(', :', array_keys($data))
+        );
+
+        try {
+            $pdo = pdo();
+            $stm = $pdo->prepare($query);
+            $stm->execute($data);
+            return $pdo->lastInsertId();
+        } catch (PDOException $e) {
+
+            $this->jsonEncod(false, $e->getMessage());
         }
     }
 
     // Get author by id
     public function getAuthor($id)
     {
-        $select = "SELECT id, title FROM author WHERE id=?";
+        $select = "SELECT id, title, body FROM author WHERE id=?";
         $stm = pdo()->prepare($select);
         $stm->execute([$id]);
         return $stm->fetch(PDO::FETCH_OBJ);
@@ -48,8 +69,9 @@ class Author
     {
         // Update author query
         $query = "UPDATE author 
-                SET title=:title 
-                WHERE id=:id";
+                    SET title=:title,
+                    body=:body
+                    WHERE id=:id";
         try {
             $stm = pdo()->prepare($query);
             $stm->execute($data);

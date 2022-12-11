@@ -29,6 +29,14 @@ require '_header.php';
                                                 <p id="title_err" class="text-red-500 text-sm italic error mt-2"></p>
                                             </div>
 
+                                            <div class="mb-4">
+                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="body">
+                                                    Секция
+                                                </label>
+                                                <textarea required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="body" cols="5" rows="4" name="body"><?= $author->body; ?></textarea>
+                                                <p id="body_err" class="text-red-500 text-sm italic error mt-2"></p>
+                                            </div>
+
                                             <input type="hidden" name="id" value="<?= $author->id; ?>">
 
                                             <div class="flex items-center justify-between mt-8">

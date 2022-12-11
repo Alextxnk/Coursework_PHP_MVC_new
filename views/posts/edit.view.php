@@ -45,6 +45,7 @@ require '_header.php';
                                             <textarea required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="body" cols="5" rows="4" name="body"><?= $post->body; ?></textarea>
                                             <p id="body_err" class="text-red-500 text-sm italic error mt-2"></p>
                                         </div>
+
                                         <div class="mb-4">
                                             <label class="block text-gray-700 text-sm font-bold mb-2" for="category">
                                                 Select Category

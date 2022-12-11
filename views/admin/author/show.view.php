@@ -27,6 +27,16 @@ require '_header.php';
                             </div>
                             <div class="lg:flex items-center border-b pb-2">
                                 <div class="min-w-max">
+                                    <h2 class="font-bold text-lg mr-4">Секция:</h2>
+                                </div>
+                                <div class="w-3/5">
+                                    <p>
+                                        <?= $author->body; ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="lg:flex items-center border-b pb-2">
+                                <div class="min-w-max">
                                     <h2 class="font-bold text-lg mr-4">Запись создана:</h2>
                                 </div>
                                 <div class="w-3/5">

@@ -11,9 +11,9 @@ class AdminAuthorController
     // Show admin/author
     public function index()
     {
-        $author = (new Author)->allAuthor('author');
+        $author = ((new Author)->allAuthor('author'));
 
-        /*return dd($authors);*/
+        /*return dd($author);*/
         return view('admin/author/index', ['author' => $author]);
     }
 
