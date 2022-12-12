@@ -36,9 +36,19 @@ exit();
                             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                                 <div class="px-6 py-4">
                                     <div class="font-bold text-xl mb-2">
-                                        <p class="pb-4">Количество пользователей: <?= $users; ?></p>
+                                        <p class="pt-4">Количество пользователей: <?= $users; ?></p>
+                                        <hr>
+                                        <p class="pt-4">Количество записей в таблице Главная страница: <?= $mains; ?></p>
                                         <hr>
                                         <p class="pt-4">Количество записей в таблице Автор: <?= $authors; ?></p>
+                                        <hr>
+                                        <p class="pt-4">Количество записей в таблице Фирма: <?= $firms; ?></p>
+                                        <hr>
+                                        <p class="pt-4">Количество записей в таблице Фотоаппараты: <?= $cameras; ?></p>
+                                        <hr>
+                                        <p class="pt-4">Количество записей в таблице Объективы: <?= $flashes; ?></p>
+                                        <hr>
+                                        <p class="pt-4">Количество записей в таблице Вспышки: <?= $lenses; ?></p>
                                     </div>
                                 </div>
                             </div>

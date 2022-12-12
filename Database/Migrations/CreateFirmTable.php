@@ -2,14 +2,17 @@
 
 namespace Database\Migrations;
 
-class CreateAuthorTable
+class CreateFirmTable
 {
-    public static function authorTable($table)
+    public static function firmTable($table)
     {
         try {
             $query = "CREATE TABLE IF NOT EXISTS {$table}(
                 id INT AUTO_INCREMENT PRIMARY KEY,
-                /*title VARCHAR(255) NULL UNIQUE,*/
+                /*address VARCHAR(255) NOT NULL,
+                phone VARCHAR(255) NOT NULL,
+                work_time VARCHAR(255) NOT NULL,
+                img VARCHAR(255),*/
                 body TEXT NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )";

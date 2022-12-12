@@ -13,7 +13,7 @@ require '_header.php';
                     ?>
                     <div class="col-span-4">
                         <div class="flex justify-between mb-4">
-                            <h3 class="mb-4 text-xl font-bold">Edit Post</h3>
+                            <h3 class="mb-4 text-xl font-bold">Редактировать Пользователя</h3>
                         </div>
                         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                             <section class="mx-auto max-w-xl">
@@ -24,7 +24,7 @@ require '_header.php';
 
                                         <div class="mb-4">
                                             <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
-                                                Username
+                                                Пользователь
                                             </label>
                                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" name="username" type="text" value="<?= $user->username; ?>">
                                             <p id="username_err" class="text-red-500 text-sm italic error mt-2"></p>
@@ -40,7 +40,7 @@ require '_header.php';
 
                                         <div class=" mb-4">
                                             <label class="block text-gray-700 text-sm font-bold mb-2" for="thumbnail">
-                                                Thumbnail
+                                                Картинка
                                             </label>
                                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="thumbnail" name="thumbnail" type="file" value="<?= $user->thumbnail; ?>">
                                             <img src="/<?= $user->thumbnail; ?>" class="mt-3" alt="" height="80" width="120" id="imgTag" />
@@ -51,7 +51,7 @@ require '_header.php';
 
                                         <div class="flex items-center justify-between mt-8">
                                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="submitbtn" type="submit">
-                                                Update Data
+                                                Обновить
                                             </button>
                                         </div>
                                     </form>

@@ -104,6 +104,17 @@ class User
         $stm->execute([$id]);
     }
 
+    // Show user by id
+    public function showUser($id)
+    {
+        // Single user query
+        $select = "SELECT * FROM users WHERE id=?";
+
+        $stm = pdo()->prepare($select);
+        $stm->execute([$id]);
+        return $stm->fetch(PDO::FETCH_OBJ);
+    }
+
     // Count users 
     public function users()
     {

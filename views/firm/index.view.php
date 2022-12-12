@@ -2,7 +2,7 @@
 require "_header.php";
 ?>
 
-<section class="section-main">
+<!--<section class="section-main">
     <nav>
         <ul class="nav-ul">
             <li class="nav-li"><a class="navbar-brand" href="/firm">О фирме</a></li>
@@ -32,15 +32,9 @@ require "_header.php";
                     </ul>
                     <img class="map" src="../../public/img/map.png" alt="Карта">
                 </div>
-                <!-- /.card-body -->
-
             </div>
-            <!-- /.card -->
-
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.content -->
     <footer>
         <div class="footer-container">
             <div>
@@ -50,9 +44,11 @@ require "_header.php";
                 <a class="email" href="mailto:mail@example.com">email</a>
             </div>
         </div>
-        <!-- /.footer-container -->
     </footer>
-</section>
+</section>-->
+<?php foreach ($firm as $firm) : ?>
+    <?= $firm->body; ?>
+<?php endforeach; ?>
 
 <?php
 require "_footer.php";

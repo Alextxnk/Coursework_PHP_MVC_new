@@ -13,25 +13,35 @@ require '_header.php';
                         ?>
                         <div class="col-span-4">
                             <div class="flex justify-between border-b">
-                                <h3 class="mb-2 text-xl font-bold">Автор <?= $author->id; ?></h3>
+                                <h3 class="mb-2 text-xl font-bold">Пользователь <?= $user->id; ?></h3>
                             </div>
-                            <!--<div class="lg:flex items-center border-b pb-2">
-                                <div class="min-w-max">
-                                    <h2 class="font-bold text-lg mr-4">Заголовок:</h2>
-                                </div>
-                                <div class="w-3/5">
-                                    <p>
-                                        <?/*= $author->title; */?>
-                                    </p>
-                                </div>
-                            </div>-->
                             <div class="lg:flex items-center border-b pb-2">
                                 <div class="min-w-max">
-                                    <h2 class="font-bold text-lg mr-4">Секция:</h2>
+                                    <h2 class="font-bold text-lg mr-4">Никнейм:</h2>
                                 </div>
                                 <div class="w-3/5">
                                     <p>
-                                        <?= $author->body; ?>
+                                        <?= $user->username; ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="lg:flex items-center border-b pb-2">
+                                <div class="min-w-max">
+                                    <h2 class="font-bold text-lg mr-4">Email:</h2>
+                                </div>
+                                <div class="w-3/5">
+                                    <p>
+                                        <?= $user->email; ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="lg:flex items-center border-b pb-2">
+                                <div class="min-w-max">
+                                    <h2 class="font-bold text-lg mr-4">Картинка:</h2>
+                                </div>
+                                <div class="w-3/5">
+                                    <p>
+                                        <?= $user->thumbnail; ?>
                                     </p>
                                 </div>
                             </div>
@@ -41,7 +51,7 @@ require '_header.php';
                                 </div>
                                 <div class="w-3/5">
                                     <p>
-                                        <?= $author->created_at; ?>
+                                        <?= $user->created_at; ?>
                                     </p>
                                 </div>
                             </div>

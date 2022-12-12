@@ -2,23 +2,19 @@
 
 namespace App\Validations;
 
-class AuthorValidation
+class PageValidation
 {
-    public function validateAuthor($values)
+    public function validatePage($values)
     {
-        $title = $body = "";
+        $body = "";
 
-        $title = $this->validateInput($values['title']);
         $body = $this->validateInput($values['body']);
 
-        if (empty($title)) {
-            $this->jsonEncod(false, 'Длина заголовка слишком маленькая.');
-        } elseif (empty($body)) {
+        if (empty($body)) {
             $this->jsonEncod(false, 'Длина секции слишком маленькая.');
         } else {
             return [
-                'title' => $title,
-                'body' => $body,
+                'body' => $body
             ];
         }
     }

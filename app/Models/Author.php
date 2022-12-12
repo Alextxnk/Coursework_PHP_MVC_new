@@ -33,10 +33,8 @@ class Author
             $this->jsonEncod(false, $th->getMessage());
         }*/
 
-        // Check post unique value
-        $this->uniqueCheck($table, $data);
+        //$this->uniqueCheck($table, $data);
 
-        // Insert post query
         $query = sprintf(
             "INSERT INTO %s (%s) VALUES(%s)",
             $table,
@@ -58,7 +56,7 @@ class Author
     // Get author by id
     public function getAuthor($id)
     {
-        $select = "SELECT id, title, body FROM author WHERE id=?";
+        $select = "SELECT id, /*title,*/ body FROM author WHERE id=?";
         $stm = pdo()->prepare($select);
         $stm->execute([$id]);
         return $stm->fetch(PDO::FETCH_OBJ);
@@ -69,9 +67,9 @@ class Author
     {
         // Update author query
         $query = "UPDATE author 
-                    SET title=:title,
-                    body=:body
-                    WHERE id=:id";
+                SET /*title=:title,*/
+                body=:body
+                WHERE id=:id";
         try {
             $stm = pdo()->prepare($query);
             $stm->execute($data);
@@ -100,7 +98,7 @@ class Author
     }
 
     // Check if author already exists or not
-    protected function uniqueCheck($table, $data)
+    /*protected function uniqueCheck($table, $data)
     {
         $select = "SELECT title FROM {$table}";
         $stm = pdo()->prepare($select);
@@ -112,7 +110,7 @@ class Author
                 $this->jsonEncod(false, 'Такая запись автора уже существует!');
             }
         }
-    }
+    }*/
 
     // Count posts
     public function authors()

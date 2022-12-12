@@ -45,11 +45,10 @@ require "_header.php";
             </div>
         </div>
     </footer>
-</section> -->
+</section>-->
 <?php foreach ($author as $author) : ?>
     <?= $author->body; ?>
 <?php endforeach; ?>
-
 
 <?php
 require "_footer.php";

@@ -3,9 +3,11 @@
 namespace App\Controllers;
 
 use App\Core\Request;
+use App\Models\Main;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Author;
+use App\Models\Firm;
 use App\Validations\ImageValidation;
 use App\Validations\UserValidation;
 
@@ -18,7 +20,9 @@ class AdminController
             [
                 'users' => ((new User)->users()),
                 'posts' => ((new Post)->posts()),
-                'authors' => ((new Author)->authors())
+                'authors' => ((new Author)->authors()),
+                'firms' => ((new Firm)->firms()),
+                'mains' => ((new Main)->mains())
             ]
         );
     }

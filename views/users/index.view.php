@@ -13,20 +13,20 @@ require '_header.php';
                     ?>
                     <div class="col-span-4">
                         <div class="flex justify-between mb-4">
-                            <h3 class="mb-4 text-xl font-bold">Users</h3>
+                            <h3 class="mb-4 text-xl font-bold">Пользователи</h3>
                         </div>
                         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
                                         <th scope="col" class="px-6 py-3">
-                                            Image
+                                            Картинка
                                         </th>
                                         <th scope="col" class="px-6 py-3 w-60">
-                                            Username
+                                            Никнейм
                                         </th>
                                         <th scope="col" class="px-6 py-3">
-                                            Action
+                                            Действия
                                         </th>
                                     </tr>
                                 </thead>
@@ -57,6 +57,14 @@ require '_header.php';
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                                         </svg>
 
+                                                    </button>
+                                                </form>
+                                                <form action="/users/view" method="GET">
+                                                    <input type="hidden" name="id" value="<?= $user->id; ?>">
+                                                    <button type="submit">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-blue-400 cursor-pointer">&gt;
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                                                        </svg>
                                                     </button>
                                                 </form>
                                             </td>

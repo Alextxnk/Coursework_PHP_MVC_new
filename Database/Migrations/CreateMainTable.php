@@ -2,14 +2,13 @@
 
 namespace Database\Migrations;
 
-class CreateAuthorTable
+class CreateMainTable
 {
-    public static function authorTable($table)
+    public static function mainTable($table)
     {
         try {
             $query = "CREATE TABLE IF NOT EXISTS {$table}(
                 id INT AUTO_INCREMENT PRIMARY KEY,
-                /*title VARCHAR(255) NULL UNIQUE,*/
                 body TEXT NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )";

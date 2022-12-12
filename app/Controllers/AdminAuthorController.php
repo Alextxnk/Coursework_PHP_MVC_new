@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Request;
 use App\Models\Author;
-use App\Validations\AuthorValidation;
+use App\Validations\PageValidation;
 
 class AdminAuthorController
 {
@@ -14,7 +14,13 @@ class AdminAuthorController
         $author = ((new Author)->allAuthor('author'));
 
         /*return dd($author);*/
-        return view('admin/author/index', ['author' => $author]);
+        return view(
+            'admin/author/index',
+            [
+                'author' => $author,
+                'authors' => ((new Author)->authors())
+            ]
+        );
     }
 
     // Add admin/author form
@@ -35,8 +41,8 @@ class AdminAuthorController
     public function store()
     {
         // Validate admin/author
-        $data = (new AuthorValidation)
-            ->validateAuthor(Request::values());
+        $data = (new PageValidation)
+            ->validatePage(Request::values());
 
         // Send to store
         (new Author)->storeAuthor('author', $data);
@@ -64,8 +70,8 @@ class AdminAuthorController
     public function update()
     {
         // Validate admin/author
-        $data = (new AuthorValidation)
-            ->validateAuthor(Request::values());
+        $data = (new PageValidation)
+            ->validatePage(Request::values());
         // Push id
         $data['id'] = Request::values()['id'];
 

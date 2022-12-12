@@ -13,33 +13,27 @@ require '_header.php';
                         ?>
                         <div class="col-span-4">
                             <div class="flex justify-between mb-4">
-                                <h3 class="mb-4 text-xl font-bold">Добавить страницу Автора</h3>
+                                <h3 class="mb-4 text-xl font-bold">Редактировать страницу Фирмы</h3>
                             </div>
                             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                                 <section class="mx-auto max-w-xl">
                                     <div class="w-full">
                                         <div id="message"></div>
-                                        <form id="authorForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data">
-
-                                            <!--<div class="mb-4">
-                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
-                                                    Заголовок
-                                                </label>
-                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" name="title" type="text" placeholder="Текст">
-                                                <p id="title_err" class="text-red-500 text-sm italic error mt-2"></p>
-                                            </div>-->
+                                        <form id="updateFirm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST">
 
                                             <div class="mb-4">
                                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="body">
                                                     Секция
                                                 </label>
-                                                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="body" cols="5" rows="4" name="body" placeholder="HTML код"></textarea>
+                                                <textarea required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="body" cols="5" rows="4" name="body"><?= $firm->body; ?></textarea>
                                                 <p id="body_err" class="text-red-500 text-sm italic error mt-2"></p>
                                             </div>
 
+                                            <input type="hidden" name="id" value="<?= $firm->id; ?>">
+
                                             <div class="flex items-center justify-between mt-8">
-                                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="submitbtn" type="submit">
-                                                    Сохранить
+                                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                                    Обновить
                                                 </button>
                                             </div>
                                         </form>

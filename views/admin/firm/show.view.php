@@ -13,25 +13,15 @@ require '_header.php';
                         ?>
                         <div class="col-span-4">
                             <div class="flex justify-between border-b">
-                                <h3 class="mb-2 text-xl font-bold">Автор <?= $author->id; ?></h3>
+                                <h3 class="mb-2 text-xl font-bold">Фирма <?= $firm->id; ?></h3>
                             </div>
-                            <!--<div class="lg:flex items-center border-b pb-2">
-                                <div class="min-w-max">
-                                    <h2 class="font-bold text-lg mr-4">Заголовок:</h2>
-                                </div>
-                                <div class="w-3/5">
-                                    <p>
-                                        <?/*= $author->title; */?>
-                                    </p>
-                                </div>
-                            </div>-->
                             <div class="lg:flex items-center border-b pb-2">
                                 <div class="min-w-max">
                                     <h2 class="font-bold text-lg mr-4">Секция:</h2>
                                 </div>
                                 <div class="w-3/5">
                                     <p>
-                                        <?= $author->body; ?>
+                                        <?= $firm->body; ?>
                                     </p>
                                 </div>
                             </div>
@@ -41,7 +31,7 @@ require '_header.php';
                                 </div>
                                 <div class="w-3/5">
                                     <p>
-                                        <?= $author->created_at; ?>
+                                        <?= $firm->created_at; ?>
                                     </p>
                                 </div>
                             </div>

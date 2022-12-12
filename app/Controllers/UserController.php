@@ -24,6 +24,14 @@ class UserController
         return view('users/edit', ['user' => $user]);
     }
 
+    // Show single user
+    public function show()
+    {
+        $user = ((new User)->showUser(Request::values()['id']));
+
+        return view('users/show', ['user' => $user]);
+    }
+
     // Update user 
     public function update()
     {
