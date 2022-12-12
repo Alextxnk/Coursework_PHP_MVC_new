@@ -10,7 +10,9 @@ class CreateCameraTable
             $query = "CREATE TABLE IF NOT EXISTS {$table}(
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 model VARCHAR(255) NOT NULL,
+                camera_type VARCHAR(255) NOT NULL,
                 matrix_resolution VARCHAR(255) NOT NULL,
+                matrix_type VARCHAR(255) NOT NULL,
                 max_resolution VARCHAR(255) NOT NULL,
                 cost VARCHAR(255) NOT NULL,
                 thumbnail VARCHAR(255),

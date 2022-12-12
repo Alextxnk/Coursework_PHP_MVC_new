@@ -39,7 +39,7 @@ class Camera
     // Get camera by id
     public function getCamera($id)
     {
-        $select = "SELECT id, model,matrix_resolution, max_resolution, cost, thumbnail FROM camera WHERE id=?";
+        $select = "SELECT id, model, camera_type, matrix_resolution, matrix_type, max_resolution, cost, thumbnail FROM camera WHERE id=?";
         $stm = pdo()->prepare($select);
         $stm->execute([$id]);
         return $stm->fetch(PDO::FETCH_OBJ);
@@ -51,7 +51,9 @@ class Camera
         // Update camera query
         $query = "UPDATE camera 
                 SET model=:model,
+                camera_type=:camera_type,
                 matrix_resolution=:matrix_resolution,
+                matrix_type=:matrix_type,
                 max_resolution=:max_resolution,
                 cost=:cost,
                 thumbnail=ifnull(:thumbnail, thumbnail)

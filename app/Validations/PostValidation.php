@@ -28,7 +28,7 @@ class PostValidation
             return [
                 'title' => $title,
                 'slug' => $slug,
-                'body' => $body,
+                'body' => $body
             ];
         }
     }

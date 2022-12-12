@@ -80,3 +80,13 @@ $router->post('admin/firm/store', 'AdminFirmController@store');
 $router->get('admin/firm/edit', 'AdminFirmController@edit');
 $router->post('admin/firm/update', 'AdminFirmController@update');
 $router->post('admin/firm/delete', 'AdminFirmController@destroy');
+
+// admin/camera
+$router->get('admin/camera', 'AdminCameraController@index');
+$router->get('admin/camera/create', 'AdminCameraController@create');
+$router->get('admin/camera/view', 'AdminCameraController@show');
+$router->post('admin/camera/store', 'AdminCameraController@store');
+$router->get('admin/camera/edit', 'AdminCameraController@edit');
+$router->post('admin/camera/update', 'AdminCameraController@update');
+$router->post('admin/camera/delete', 'AdminCameraController@destroy');
+
