@@ -2,7 +2,7 @@
 require __DIR__ . "./partials/_header.php";
 ?>
 
-<section class="section-main">
+<!--<section class="section-main">
     <nav>
         <ul class="nav-ul">
             <li class="nav-li"><a class="navbar-brand" href="/">Главная</a></li>
@@ -68,7 +68,10 @@ require __DIR__ . "./partials/_header.php";
             </div>
         </div>
     </footer>
-</section>
+</section>-->
+<?php foreach ($main as $main) : ?>
+    <?= $main->body; ?>
+<?php endforeach; ?>
 
 <?php
 require __DIR__ . "./partials/_footer.php";

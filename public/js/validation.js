@@ -180,6 +180,67 @@ $(document).ready(function () {
     });
   });
 
+  $(document).on("submit", "#mainForm", function (e) {
+    e.preventDefault();
+
+    $("#message").html("");
+    const form = $("#mainForm")[0];
+    let data = new FormData(form);
+    $.ajax({
+      method: "POST",
+      url: "/admin/main/store",
+      dataType: "JSON",
+      data: data,
+      processData: false,
+      contentType: false,
+      cache: false,
+      success: function (response) {
+        if (response.success) {
+          $("#message").html(
+              `<div class="bg-green-100 border-l-4 border-green-500 text-gray-700 p-4" role="alert">
+              ${response.message}</div>`
+          );
+          $("#body").val("");
+        } else {
+          $("#message").html(
+              `<div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">${response.message}</div>`
+          );
+          setTimeOutFn();
+        }
+      },
+    });
+  });
+
+  $(document).on("submit", "#updateMain", function (e) {
+    e.preventDefault();
+    $("#message").html("");
+    const form = $("#updateMain")[0];
+    let data = new FormData(form);
+    $.ajax({
+      method: "POST",
+      url: "/admin/main/update",
+      dataType: "JSON",
+      data: data,
+      processData: false,
+      contentType: false,
+      cache: false,
+      success: function (response) {
+        if (response.success) {
+          $("#message").html(
+              `<div class="bg-green-100 border-l-4 border-green-500 text-gray-700 p-4" role="alert">
+              ${response.message}</div>`
+          );
+          $("#body").val("");
+        } else {
+          $("#message").html(
+              `<div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">${response.message}</div>`
+          );
+          setTimeOutFn();
+        }
+      },
+    });
+  });
+
   $(document).on("submit", "#updatePost", function (e) {
     e.preventDefault();
     if (!checkTitle() && !checkSlug() && !checkBody()) {

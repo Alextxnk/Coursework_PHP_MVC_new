@@ -51,7 +51,7 @@ class UserController
         // Success message 
         echo json_encode([
             'success'   => true,
-            'message'   => 'User updated successfully.'
+            'message'   => 'Пользователь обновлен успешно!'
         ]);
     }
 

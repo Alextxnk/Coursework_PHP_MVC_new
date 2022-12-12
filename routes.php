@@ -55,13 +55,13 @@ $router->get('lens', 'LensController@index');
 $router->get('flash', 'FlashController@index');
 
 // admin/main
-$router->get('admin/main', 'AdminFirmController@index');
-$router->get('admin/main/create', 'AdminFirmController@create');
-$router->get('admin/main/view', 'AdminFirmController@show');
-$router->post('admin/main/store', 'AdminFirmController@store');
-$router->get('admin/main/edit', 'AdminFirmController@edit');
-$router->post('admin/main/update', 'AdminFirmController@update');
-$router->post('admin/main/delete', 'AdminFirmController@destroy');
+$router->get('admin/main', 'AdminMainController@index');
+$router->get('admin/main/create', 'AdminMainController@create');
+$router->get('admin/main/view', 'AdminMainController@show');
+$router->post('admin/main/store', 'AdminMainController@store');
+$router->get('admin/main/edit', 'AdminMainController@edit');
+$router->post('admin/main/update', 'AdminMainController@update');
+$router->post('admin/main/delete', 'AdminMainController@destroy');
 
 // admin/author
 $router->get('admin/author', 'AdminAuthorController@index');
