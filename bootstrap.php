@@ -9,7 +9,8 @@ use Database\Migrations\{
     CreatePostsTable,
     CreateMainTable,
     CreateAuthorTable,
-    CreateFirmTable
+    CreateFirmTable,
+    CreateCameraTable
 };
 
 App::bind('config', require 'config.php');
@@ -19,11 +20,15 @@ Router::load('routes.php')
 
 // Create table if not exists 
 CreateUsersTable::userTable('users');
+
 CreatePostsTable::postTable('posts');
 CreateCategoriesTable::categoriesTable('categories');
+CreateCategoryPostTable::categoryPostTable('category_post');
 
 CreateMainTable::mainTable('main');
 CreateAuthorTable::authorTable('author');
 CreateFirmTable::firmTable('firm');
 
-CreateCategoryPostTable::categoryPostTable('category_post');
+CreateCameraTable::cameraTable('camera');
+
+
