@@ -56,7 +56,7 @@ class Camera
                 matrix_type=:matrix_type,
                 max_resolution=:max_resolution,
                 cost=:cost,
-                thumbnail=ifnull(:thumbnail, thumbnail)
+                thumbnail=:thumbnail
                 WHERE id=:id";
         try {
             $stm = pdo()->prepare($query);

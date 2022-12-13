@@ -39,7 +39,22 @@ require "_header.php";
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                            <?php foreach ($camera as $camera) : ?>
+                                <tr>
+                                    <th scope="row"><?= $camera->model; ?></th>
+                                    <th><?= $camera->camera_type; ?></th>
+                                    <th><?= $camera->matrix_resolution; ?></th>
+                                    <th><?= $camera->matrix_type; ?></th>
+                                    <th><?= $camera->max_resolution; ?></th>
+                                    <th><?= $camera->cost; ?></th>
+                                    <!--<th><a class="view-btn" href="#">Подробнее</a></th>-->
+                                    <th><form action="/camera/card" method="GET">
+                                            <input type="hidden" name="id" value="<?= $camera->id; ?>">
+                                            <button class="view-btn" type="submit">Подробнее</button>
+                                        </form>
+                                    </th>
+                                </tr>
+                        <!--<tr>
                             <th scope="row">Nikon Z50 Kit 16-50 VR</th>
                             <th>беззеркальные</th>
                             <th>20.9</th>
@@ -83,7 +98,8 @@ require "_header.php";
                             <th>6048x4024</th>
                             <th>260 990 ₽</th>
                             <th><a class="view-btn" href="#">Подробнее</a></th>
-                        </tr>
+                        </tr>-->
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

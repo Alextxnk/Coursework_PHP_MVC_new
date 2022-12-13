@@ -41,18 +41,46 @@ class AdminCameraController
     public function store()
     {
         // Validate admin/camera
-        $data = (new CameraValidation)
-            ->validateCamera(Request::values());
+        $data = ((new CameraValidation)->validateCamera(Request::values()));
+
+        // Validate thumbnail
+        $imgUrl = '';
+        $imgUrl = ((new ImageValidation)->imgValidation(Request::file()['thumbnail']));
+        if ($imgUrl) $imgUrl = $imgUrl;
+
+        // Send post data to store
+        //$lastPostId = $this->sendToStore($imgUrl, $data);
 
         // Send to store
-        (new Camera)->storeCamera('camera', $data);
+        //(new Camera)->storeCamera('camera', $data);
+
 
         // Success message
         echo json_encode([
             'success'   => true,
             'message'   => 'Камера добавлена успешно!'
         ]);
+
+        if ($imgUrl == '') {
+            $data['thumbnail'] = 'public/assets/thumbnails/800x400.png';
+            return ((new Camera)->storeCamera('camera', $data));
+        } else {
+            $data['thumbnail'] = $imgUrl;
+            return ((new Camera)->storeCamera('camera', $data));
+        }
     }
+
+    // Send post data to post model to store
+    /*protected function sendToStore($imgUrl, $data)
+    {
+        if ($imgUrl == '') {
+            $data['thumbnail'] = 'public/assets/thumbnails/800x400.png';
+            return ((new Camera)->storeCamera('camera', $data));
+        } else {
+            $data['thumbnail'] = $imgUrl;
+            return ((new Camera)->storeCamera('camera', $data));
+        }
+    }*/
 
     // Edit admin/camera
     public function edit()
@@ -68,10 +96,13 @@ class AdminCameraController
     public function update()
     {
         // Validate admin/camera
-        $data = (new CameraValidation)
-            ->validateCamera(Request::values());
+        $data = ((new CameraValidation)->validateCamera(Request::values()));
         // Push id
         $data['id'] = Request::values()['id'];
+
+        // Validate thumbnail
+        $imgUrl = ((new ImageValidation)->imgValidation(Request::file()['thumbnail']));
+        $data['thumbnail'] = $imgUrl;
 
         (new Camera)->updateCamera($data);
 

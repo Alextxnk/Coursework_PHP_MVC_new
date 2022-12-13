@@ -47,6 +47,7 @@ $router->get('firm', 'FirmController@index');
 
 // camera
 $router->get('camera', 'CameraController@index');
+$router->get('camera/card', 'CameraController@show');
 
 // lens
 $router->get('lens', 'LensController@index');

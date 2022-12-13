@@ -189,6 +189,15 @@ nav {
     max-width: 30%;
 }
 
+.card-item-color {
+    color: #5a5c69;
+    padding-left: 0.5rem;
+}
+
+.small-img {
+    width: 50%;
+}
+
 .firm-ul {
     list-style-type: none;
     padding-bottom: 1rem;
