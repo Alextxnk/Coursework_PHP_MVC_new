@@ -34,7 +34,7 @@ require '_header.php';
                                                     Тип объектива
                                                 </label>
                                                 <select name="lens_type" id="lens_type" multiple class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                                    <option disabled selected>Выберите Тип фотоаппарата</option>
+                                                    <option disabled selected>Выберите Тип объектива</option>
                                                     <option value="Zoom-объектив">Zoom-объектив</option>
                                                     <option value="Фикс">Фикс</option>
                                                 </select>

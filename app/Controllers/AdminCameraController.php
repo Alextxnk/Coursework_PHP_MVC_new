@@ -12,7 +12,7 @@ class AdminCameraController
     // Show admin/camera
     public function index()
     {
-        $camera= ((new Camera)->allCamera('camera'));
+        $camera = ((new Camera)->allCamera('camera'));
 
         return view(
             'admin/camera/index',

@@ -17,11 +17,11 @@ class LensValidation
         if (empty($model)) {
             $this->jsonEncod(false, 'Длина модели слишком маленькая.');
         } elseif (empty($lens_type)) {
-            $this->jsonEncod(false, 'Длина типа камеры слишком маленькая.');
+            $this->jsonEncod(false, 'Длина типа объектива слишком маленькая.');
         } elseif (empty($min_distance)) {
-            $this->jsonEncod(false, 'Длина разрешения матрицы слишком маленькая.');
+            $this->jsonEncod(false, 'Длина мин. расст. слишком маленькая.');
         } elseif (empty($max_distance)) {
-            $this->jsonEncod(false, 'Длина типа матрицы слишком маленькая.');
+            $this->jsonEncod(false, 'Длина макс. расст. слишком маленькая.');
         } elseif (empty($cost)) {
             $this->jsonEncod(false, 'Длина цены слишком маленькая.');
         } else {

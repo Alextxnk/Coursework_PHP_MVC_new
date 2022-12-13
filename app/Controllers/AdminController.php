@@ -10,6 +10,7 @@ use App\Models\Author;
 use App\Models\Firm;
 use App\Models\Camera;
 use App\Models\Lens;
+use App\Models\Flash;
 use App\Validations\ImageValidation;
 use App\Validations\UserValidation;
 
@@ -26,7 +27,8 @@ class AdminController
                 'firms' => ((new Firm)->firms()),
                 'mains' => ((new Main)->mains()),
                 'cameras' => ((new Camera)->cameras()),
-                'lenses' => ((new Lens)->lenses())
+                'lenses' => ((new Lens)->lenses()),
+                'flashes' => ((new Flash)->flashes())
             ]
         );
     }

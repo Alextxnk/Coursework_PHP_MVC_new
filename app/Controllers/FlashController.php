@@ -1,12 +1,23 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Flash;
+use App\Core\Request;
 
 class FlashController
 {
-    // Show how many users and posts we have
     public function index()
     {
-        return view('flash/index');
+        $flash = (new Flash)->allFlash('flash');
+
+        return view('flash/index', ['flash' => $flash]);
+    }
+
+    // Show single flash/card
+    public function show()
+    {
+        $flash = ((new Flash)->showFlash(Request::values()['id']));
+
+        return view('flash/card/index', ['flash' => $flash]);
     }
 }

@@ -13,55 +13,70 @@ require '_header.php';
                         ?>
                         <div class="col-span-4">
                             <div class="flex justify-between mb-4">
-                                <h3 class="mb-4 text-xl font-bold">Добавить Объектив</h3>
+                                <h3 class="mb-4 text-xl font-bold">Добавить Вспышку</h3>
                             </div>
                             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                                 <section class="mx-auto max-w-xl">
                                     <div class="w-full">
                                         <div id="message"></div>
-                                        <form id="lensForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data">
+                                        <form id="flashForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data">
 
                                             <div class="mb-4">
                                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="model">
-                                                    Модификация объектива
+                                                    Модификация вспышки
                                                 </label>
-                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="model" name="model" type="text" placeholder="Fujifilm XF 55-200mm">
+                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="model" name="model" type="text" placeholder="YONGNUO YN560Li">
                                                 <p id="model_err" class="text-red-500 text-sm italic error mt-2"></p>
                                             </div>
 
                                             <div class="mb-4">
-                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="lens_type">
-                                                    Тип объектива
+                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="flash_type">
+                                                    Тип вспышки
                                                 </label>
-                                                <select name="lens_type" id="lens_type" multiple class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                                    <option disabled selected>Выберите Тип объектива</option>
-                                                    <option value="Zoom-объектив">Zoom-объектив</option>
-                                                    <option value="Фикс">Фикс</option>
+                                                <select name="flash_type" id="flash_type" multiple class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                                    <option disabled selected>Выберите Тип вспышки</option>
+                                                    <option value="Обычная">Обычная</option>
                                                 </select>
                                                 <p class="text-red-500 text-xs italic error mt-2"></p>
                                             </div>
 
                                             <div class="mb-4">
-                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="min_distance">
-                                                    Мин. фокус. расст., мм
+                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="cameras">
+                                                    Совместимые камеры
                                                 </label>
-                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="min_distance" name="min_distance" type="text" placeholder="55">
-                                                <p id="min_distance_err" class="text-red-500 text-sm italic error mt-2"></p>
+                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cameras" name="cameras" type="text" placeholder="Canon">
+                                                <p id="cameras_err" class="text-red-500 text-sm italic error mt-2"></p>
                                             </div>
 
                                             <div class="mb-4">
-                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="max_distance">
-                                                    Макс. фокус. расст., мм
+                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="display">
+                                                    Дисплей
                                                 </label>
-                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="max_distance" name="max_distance" type="text" placeholder="200">
-                                                <p id="max_distance_err" class="text-red-500 text-sm italic error mt-2"></p>
+                                                <select name="display" id="display" multiple class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                                    <option disabled selected>Наличие дисплея</option>
+                                                    <option value="Да">Да</option>
+                                                    <option value="Нет">Нет</option>
+                                                </select>
+                                                <p class="text-red-500 text-xs italic error mt-2"></p>
+                                            </div>
+
+                                            <div class="mb-4">
+                                                <label class="block text-gray-700 text-sm font-bold mb-2" for="zoom">
+                                                    Зум
+                                                </label>
+                                                <select name="zoom" id="zoom" multiple class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                                    <option disabled selected>Зум</option>
+                                                    <option value="авто./ручной">авто./ручной</option>
+                                                    <option value="авто.">авто.</option>
+                                                </select>
+                                                <p class="text-red-500 text-xs italic error mt-2"></p>
                                             </div>
 
                                             <div class="mb-4">
                                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="cost">
                                                     Цена
                                                 </label>
-                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cost" name="cost" type="text" placeholder="114 900 ₽">
+                                                <input required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cost" name="cost" type="text" placeholder="16 200 ₽">
                                                 <p id="cost_err" class="text-red-500 text-sm italic error mt-2"></p>
                                             </div>
 
