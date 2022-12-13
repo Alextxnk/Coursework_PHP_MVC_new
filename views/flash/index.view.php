@@ -28,6 +28,7 @@ require "_header.php";
                 <div class="card-body">
                     <table class="table">
                         <thead>
+
                         <tr>
                             <th scope="col">Модификация вспышки</th>
                             <td scope="col">Тип вспышки</td>
@@ -39,6 +40,21 @@ require "_header.php";
                         </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($flash as $flash) : ?>
+                                <tr>
+                                    <th scope="row"><?= $flash->model; ?></th>
+                                    <th><?= $flash->flash_type; ?></th>
+                                    <th><?= $flash->cameras; ?></th>
+                                    <th><?= $flash->display; ?></th>
+                                    <th><?= $flash->zoom; ?></th>
+                                    <th><?= $flash->cost; ?></th>
+                                    <th><form action="/flash/card" method="GET">
+                                            <input type="hidden" name="id" value="<?= $flash->id; ?>">
+                                            <button class="view-btn" type="submit">Подробнее</button>
+                                        </form>
+                                    </th>
+                                </tr>
+                        <!--
                         <tr>
                             <th scope="row">YONGNUO YN560Li GN58 5600K</th>
                             <th>обычная</th>
@@ -83,8 +99,8 @@ require "_header.php";
                             <th>автоматич./ручной</th>
                             <th>16 200 ₽</th>
                             <th><a class="view-btn" href="#">Подробнее</a></th>
-                        </tr>
-
+                        </tr>-->
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
