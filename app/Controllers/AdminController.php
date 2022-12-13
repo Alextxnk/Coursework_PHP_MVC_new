@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Author;
 use App\Models\Firm;
+use App\Models\Camera;
 use App\Validations\ImageValidation;
 use App\Validations\UserValidation;
 
@@ -22,7 +23,8 @@ class AdminController
                 'posts' => ((new Post)->posts()),
                 'authors' => ((new Author)->authors()),
                 'firms' => ((new Firm)->firms()),
-                'mains' => ((new Main)->mains())
+                'mains' => ((new Main)->mains()),
+                'cameras' => ((new Camera)->cameras())
             ]
         );
     }
