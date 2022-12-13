@@ -38,7 +38,20 @@ require "_header.php";
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                            <?php foreach ($lens as $lens) : ?>
+                                <tr>
+                                    <th scope="row"><?= $lens->model; ?></th>
+                                    <th><?= $lens->lens_type; ?></th>
+                                    <th><?= $lens->min_distance; ?></th>
+                                    <th><?= $lens->max_distance; ?></th>
+                                    <th><?= $lens->cost; ?></th>
+                                    <th><form action="/lens/card" method="GET">
+                                            <input type="hidden" name="id" value="<?= $lens->id; ?>">
+                                            <button class="view-btn" type="submit">Подробнее</button>
+                                        </form>
+                                    </th>
+                                </tr>
+                        <!--<tr>
                             <th scope="row">Fujifilm XF 55-200mm f/3.5-4.8 R LM OIS</th>
                             <th>zoom-объектив</th>
                             <th>55</th>
@@ -77,7 +90,8 @@ require "_header.php";
                             <th>140</th>
                             <th>114 900 ₽</th>
                             <th><a class="view-btn" href="#">Подробнее</a></th>
-                        </tr>
+                        </tr>-->
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

@@ -48,13 +48,6 @@ class AdminCameraController
         $imgUrl = ((new ImageValidation)->imgValidation(Request::file()['thumbnail']));
         if ($imgUrl) $imgUrl = $imgUrl;
 
-        // Send post data to store
-        //$lastPostId = $this->sendToStore($imgUrl, $data);
-
-        // Send to store
-        //(new Camera)->storeCamera('camera', $data);
-
-
         // Success message
         echo json_encode([
             'success'   => true,
@@ -69,18 +62,6 @@ class AdminCameraController
             return ((new Camera)->storeCamera('camera', $data));
         }
     }
-
-    // Send post data to post model to store
-    /*protected function sendToStore($imgUrl, $data)
-    {
-        if ($imgUrl == '') {
-            $data['thumbnail'] = 'public/assets/thumbnails/800x400.png';
-            return ((new Camera)->storeCamera('camera', $data));
-        } else {
-            $data['thumbnail'] = $imgUrl;
-            return ((new Camera)->storeCamera('camera', $data));
-        }
-    }*/
 
     // Edit admin/camera
     public function edit()

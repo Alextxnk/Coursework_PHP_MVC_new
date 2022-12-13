@@ -47,7 +47,6 @@ require "_header.php";
                                     <th><?= $camera->matrix_type; ?></th>
                                     <th><?= $camera->max_resolution; ?></th>
                                     <th><?= $camera->cost; ?></th>
-                                    <!--<th><a class="view-btn" href="#">Подробнее</a></th>-->
                                     <th><form action="/camera/card" method="GET">
                                             <input type="hidden" name="id" value="<?= $camera->id; ?>">
                                             <button class="view-btn" type="submit">Подробнее</button>

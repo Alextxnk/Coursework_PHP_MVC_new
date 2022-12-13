@@ -51,9 +51,11 @@ $router->get('camera/card', 'CameraController@show');
 
 // lens
 $router->get('lens', 'LensController@index');
+$router->get('lens/card', 'LensController@show');
 
 // flash
 $router->get('flash', 'FlashController@index');
+$router->get('flash/card', 'FlashController@show');
 
 // admin/main
 $router->get('admin/main', 'AdminMainController@index');
@@ -90,4 +92,22 @@ $router->post('admin/camera/store', 'AdminCameraController@store');
 $router->get('admin/camera/edit', 'AdminCameraController@edit');
 $router->post('admin/camera/update', 'AdminCameraController@update');
 $router->post('admin/camera/delete', 'AdminCameraController@destroy');
+
+// admin/lens
+$router->get('admin/lens', 'AdminLensController@index');
+$router->get('admin/lens/create', 'AdminLensController@create');
+$router->get('admin/lens/view', 'AdminLensController@show');
+$router->post('admin/lens/store', 'AdminLensController@store');
+$router->get('admin/lens/edit', 'AdminLensController@edit');
+$router->post('admin/lens/update', 'AdminLensController@update');
+$router->post('admin/lens/delete', 'AdminLensController@destroy');
+
+// admin/flash
+$router->get('admin/flash', 'AdminFlashController@index');
+$router->get('admin/flash/create', 'AdminFlashController@create');
+$router->get('admin/flash/view', 'AdminFlashController@show');
+$router->post('admin/flash/store', 'AdminFlashController@store');
+$router->get('admin/flash/edit', 'AdminFlashController@edit');
+$router->post('admin/flash/update', 'AdminFlashController@update');
+$router->post('admin/flash/delete', 'AdminFlashController@destroy');
 

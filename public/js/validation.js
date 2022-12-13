@@ -322,6 +322,85 @@ $(document).ready(function () {
     });
   });
 
+  $(document).on("submit", "#lensForm", function (e) {
+    e.preventDefault();
+
+    $("#message").html("");
+    const form = $("#lensForm")[0];
+    let data = new FormData(form);
+    $.ajax({
+      method: "POST",
+      url: "/admin/lens/store",
+      dataType: "JSON",
+      data: data,
+      processData: false,
+      contentType: false,
+      cache: false,
+      success: function (response) {
+        if (response.success) {
+          $("#message").html(
+              `<div class="bg-green-100 border-l-4 border-green-500 text-gray-700 p-4" role="alert">
+              ${response.message}</div>`
+          );
+          $("#model").val("");
+          $("#lens_type").val("");
+          $("#min_distance").val("");
+          $("#max_distance").val("");
+          $("#cost").val("");
+          $("#thumbnail").val("");
+          $("#imgTag").attr(
+              "src",
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+          );
+        } else {
+          $("#message").html(
+              `<div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">${response.message}</div>`
+          );
+          setTimeOutFn();
+        }
+      },
+    });
+  });
+
+  $(document).on("submit", "#updateLens", function (e) {
+    e.preventDefault();
+    $("#message").html("");
+    const form = $("#updateLens")[0];
+    let data = new FormData(form);
+    $.ajax({
+      method: "POST",
+      url: "/admin/lens/update",
+      dataType: "JSON",
+      data: data,
+      processData: false,
+      contentType: false,
+      cache: false,
+      success: function (response) {
+        if (response.success) {
+          $("#message").html(
+              `<div class="bg-green-100 border-l-4 border-green-500 text-gray-700 p-4" role="alert">
+              ${response.message}</div>`
+          );
+          $("#model").val("");
+          $("#lens_type").val("");
+          $("#min_distance").val("");
+          $("#max_distance").val("");
+          $("#cost").val("");
+          $("#thumbnail").val("");
+          $("#imgTag").attr(
+              "src",
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+          );
+        } else {
+          $("#message").html(
+              `<div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">${response.message}</div>`
+          );
+          setTimeOutFn();
+        }
+      },
+    });
+  });
+
   $(document).on("submit", "#updatePost", function (e) {
     e.preventDefault();
     if (!checkTitle() && !checkSlug() && !checkBody()) {

@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Author;
 use App\Models\Firm;
 use App\Models\Camera;
+use App\Models\Lens;
 use App\Validations\ImageValidation;
 use App\Validations\UserValidation;
 
@@ -24,7 +25,8 @@ class AdminController
                 'authors' => ((new Author)->authors()),
                 'firms' => ((new Firm)->firms()),
                 'mains' => ((new Main)->mains()),
-                'cameras' => ((new Camera)->cameras())
+                'cameras' => ((new Camera)->cameras()),
+                'lenses' => ((new Lens)->lenses())
             ]
         );
     }

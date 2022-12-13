@@ -10,7 +10,9 @@ use Database\Migrations\{
     CreateMainTable,
     CreateAuthorTable,
     CreateFirmTable,
-    CreateCameraTable
+    CreateCameraTable,
+    CreateLensTable,
+    CreateFlashTable
 };
 
 App::bind('config', require 'config.php');
@@ -21,6 +23,7 @@ Router::load('routes.php')
 // Create table if not exists 
 CreateUsersTable::userTable('users');
 
+//
 CreatePostsTable::postTable('posts');
 CreateCategoriesTable::categoriesTable('categories');
 CreateCategoryPostTable::categoryPostTable('category_post');
@@ -30,5 +33,7 @@ CreateAuthorTable::authorTable('author');
 CreateFirmTable::firmTable('firm');
 
 CreateCameraTable::cameraTable('camera');
+CreateLensTable::lensTable('lens');
+CreateFlashTable::flashTable('flash');
 
 
